@@ -71,7 +71,7 @@ async def start(client, message):
             btn.append([InlineKeyboardButton(" ✅ Refresh", callback_data=f"checksub#{message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
-            text="**Ye Movie Group Ko Join Nhin Kiya Hai Join Kro....\n💞 Join This Group Pe Click Kare And Join Karke Fir se Try Again Kare⬇️\n\n**",
+            text="**Ye Movie Group Ko Join Nhin Kiya Hai Join Kro....\n💞 Join This Group Pe Click Kare And Join Karke Fir se Refresh Pe Click Kare Kare⬇️\n\n**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode="markdown"
             )
