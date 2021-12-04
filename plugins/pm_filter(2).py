@@ -108,17 +108,17 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"📂{get_size(file.file_size)}", callback_data=f'files#{file.file_id}'
+                    text=f"📂{file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
                 InlineKeyboardButton(
-                    text=f"🎥{file.file_name}",
+                    text=f"🎥{get_size(file.file_size)}",
                     callback_data=f'files_#{file.file_id}',
                 ),
             ]
             for file in files
         ]
 
-    if 0 < offset <= 7:
+    if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
         off_set = None
