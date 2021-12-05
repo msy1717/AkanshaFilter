@@ -646,6 +646,7 @@ async def auto_filter(client, msg, spoll=False):
             director = imdb["director"],
             writer = imdb["writer"],
             producer = imdb["producer"],
+
             composer = imdb["composer"],
             cinematographer = imdb["cinematographer"],
             music_team = imdb["music_team"],
@@ -660,6 +661,9 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
         cap = f"<b>🤭 {search} </b>𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐁𝐘 <b>@ReQuest_Movies_V3</b> ✨ 𝐅𝐨𝐮𝐧𝐝𝐞𝐝 𝐑𝐞𝐬𝐮𝐥𝐭𝐬 𝐅𝐨𝐫 𝐘𝐨𝐮𝐫 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 🤗"
+         await asyncio.sleep(5)
+             await k.delete()
+            return
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
