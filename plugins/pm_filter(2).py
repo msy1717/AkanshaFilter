@@ -143,8 +143,8 @@ async def next_page(bot, query):
     except MessageNotModified:
         pass
     await query.answer()
-    await asyncio.sleep(2)
-    await query.delete()
+    await asyncio.sleep(15)
+    await k.delete()
 @Client.on_callback_query(filters.regex(r"^spolling"))
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
