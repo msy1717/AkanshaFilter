@@ -143,7 +143,6 @@ async def next_page(bot, query):
     except MessageNotModified:
         pass
     await query.answer()
-  def hi(message; Message)
     await asyncio.sleep(2)
     message.delete()
 @Client.on_callback_query(filters.regex(r"^spolling"))
