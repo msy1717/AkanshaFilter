@@ -2,7 +2,7 @@
 import asyncio
 import re
 import ast
-
+import asyncio
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 import pyrogram
@@ -143,7 +143,8 @@ async def next_page(bot, query):
     except MessageNotModified:
         pass
     await query.answer()
-
+    await asyncio.sleep(2)
+    await query.delete()
 @Client.on_callback_query(filters.regex(r"^spolling"))
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
