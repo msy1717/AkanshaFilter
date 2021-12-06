@@ -143,7 +143,7 @@ async def next_page(bot, query):
     except MessageNotModified:
         pass
     await query.answer()
-    await asyncio.sleep(15)
+    await asyncio.sleep(8)
     await k.delete()
 @Client.on_callback_query(filters.regex(r"^spolling"))
 async def advantage_spoll_choker(bot, query):
@@ -661,6 +661,8 @@ async def auto_filter(client, msg, spoll=False):
         )
     else:
         cap = f"<b>🤭 {search} </b>𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 𝐁𝐘 <b>@ReQuest_Movies_V3</b> ✨ 𝐅𝐨𝐮𝐧𝐝𝐞𝐝 𝐑𝐞𝐬𝐮𝐥𝐭𝐬 𝐅𝐨𝐫 𝐘𝐨𝐮𝐫 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 🤗"
+         await asyncio.sleep(8)
+         await k.delete()
     if imdb and imdb.get('poster'):
         try:
             await message.reply_photo(photo=imdb.get('poster'), caption=cap, reply_markup=InlineKeyboardMarkup(btn))
@@ -674,7 +676,6 @@ async def auto_filter(client, msg, spoll=False):
     else:
         await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     if spoll:
-        await asyncio.sleep(8)
         await msg.message.delete()
 
 
