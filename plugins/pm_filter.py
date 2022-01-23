@@ -25,7 +25,7 @@ SPELL_CHECK = {}
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client,message):
-    await message.delete()
+    await message.delete(300)
     group_id = message.chat.id
     name = message.text
 
