@@ -257,6 +257,8 @@ async def delallconfirm(client, message):
         title = message.chat.title
 
     else:
+        await asyncio.sleep(3)
+        await r.delete()
         return
 
     st = await client.get_chat_member(grp_id, userid)
