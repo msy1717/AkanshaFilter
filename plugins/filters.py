@@ -1,6 +1,7 @@
 import io
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+import asyncio
 from database.filters_mdb import(
    add_filter,
    get_filters,
@@ -114,6 +115,8 @@ async def addfilter(client, message):
         quote=True,
         parse_mode="md"
     )
+    await asyncio.sleep(200)
+    await message.delete()
 
 
 @Client.on_message(filters.command(['viewfilters', 'filters']) & filters.incoming)
